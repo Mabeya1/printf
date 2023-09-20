@@ -1,5 +1,5 @@
-#ifndef CUSTOM_PRINTF_H
-#define CUSTOM_PRINTF_H
+#ifndef MAIN_H
+#define MAIN_H
 
 #include <stdarg.h>
 #include <stdio.h>
@@ -114,4 +114,4 @@ int is_digit(char);
 long int convert_size_number(long int num, int size);
 long int convert_size_unsgnd(unsigned long int num, int size);
 
-#endif /* CUSTOM_PRINTF_H */
+#endif /* MAIN_H */
