@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * get_width - Calculate width for printing.
  * @format: Formatted string.

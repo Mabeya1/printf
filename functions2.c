@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * print_pointer - Prints the value of a pointer variable
  * @types: List of arguments
@@ -52,7 +53,8 @@ int print_pointer(va_list types, char buffer[],
 }
 
 /**
- * print_non_printable - Prints ASCII codes in hexadecimal of non-printable characters
+ * print_non_printable - Prints ASCII codes in hexadecimal
+ * of non-printable characters
  * @types: List of arguments
  * @buffer: Buffer to handle print
  * @flags: Active flags
