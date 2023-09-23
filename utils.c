@@ -8,10 +8,10 @@
  */
 int is_printable(char c)
 {
-    if (c >= 32 && c < 127)
-        return (1);
+	if (c >= 32 && c < 127)
+		return (1);
 
-    return (0);
+	return (0);
 }
 
 /**
@@ -24,19 +24,18 @@ int is_printable(char c)
  */
 int append_hexa_code(char ascii_code, char buffer[], int i)
 {
-    char map_to[] = "0123456789ABCDEF";
-    /* The hexa format code is always two digits long */
-    if (ascii_code < 0)
-        ascii_code *= -1;
+	char map_to[] = "0123456789ABCDEF";
+	/*The hexa format code is always two digits long*/
+	if (ascii_code < 0)
+		ascii_code *= -1;
+        /*Add the escape character*/
+	buffer[i++] = '\\';
+	buffer[i++] = 'x';
+        /*Add the two hexadecimal digits*/
+	buffer[i++] = map_to[ascii_code / 16];
+	buffer[i] = map_to[ascii_code % 16];
 
-    buffer[i++] = '\\';  // Add the escape character
-    buffer[i++] = 'x';   // Add 'x' to indicate a hexadecimal value
-
-    // Add the two hexadecimal digits
-    buffer[i++] = map_to[ascii_code / 16];
-    buffer[i] = map_to[ascii_code % 16];
-
-    return (3);
+	return (3) ;
 }
 
 /**
@@ -47,10 +46,10 @@ int append_hexa_code(char ascii_code, char buffer[], int i)
  */
 int is_digit(char c)
 {
-    if (c >= '0' && c <= '9')
-        return (1);
+	if (c >= '0' && c <= '9')
+		return (1);
 
-    return (0);
+	return (0);
 }
 
 /**
@@ -62,27 +61,26 @@ int is_digit(char c)
  */
 long int convert_size_number(long int num, int size)
 {
-    if (size == S_LONG)
-        return (num);
-    else if (size == S_SHORT)
-        return ((short)num);
+	if (size == S_LONG)
+		return (num);
+	else if (size == S_SHORT)
+		return ((short)num);
 
-    return ((int)num);
+	return ((int)num);
 }
 
 /**
- * convert_size_unsgnd - Casts a number to the specified size
- * Return: Casted value of num 
- * @num: Number to be casted
+ * is_digit - Verifies if a char is a digit
+ * @c: Char to be assessed
  *
- * @size: Number indicating the type to be casted 
+ * Return: 1 if c is a digit, 0 if it is not
  */
 long int convert_size_unsgnd(unsigned long int num, int size)
 {
-    if (size == S_LONG)
-        return (num);
-    else if (size == S_SHORT)
-        return ((unsigned short)num);
+	if (size == S_LONG)
+		return (num);
+	else if (size == S_SHORT)
+		return ((unsigned short)num);
 
-    return ((unsigned int)num);
+	return ((unsigned int)num);
 }
